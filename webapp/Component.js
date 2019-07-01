@@ -67,6 +67,5 @@ sap.ui.define([
 		}
 
 	});
-
-
+	//this is ridiculous
 });
