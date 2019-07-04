@@ -1,0 +1,20 @@
+<mvc:View
+	controllerName="demo.survey2.SurveyDemo2.controller.Overview"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic">
+	
+	<Page
+		title="{i18n>homePageTitle}">
+        <headerContent
+        	class="header">
+			<Button
+				icon="sap-icon://home"
+				press=".onPressHome"/>
+		</headerContent>
+		<content>
+			<mvc:XMLView viewName="demo.survey2.SurveyDemo2.view.Home"/>
+			<mvc:XMLView viewName="demo.survey2.SurveyDemo2.view.Worklist"/>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("demo.survey2.SurveyDemo2.controller.Overview",{onPressHome:function(e){var o=sap.ui.core.UIComponent.getRouterFor(this);o.navTo("overview")}})});

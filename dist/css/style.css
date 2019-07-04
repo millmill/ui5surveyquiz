@@ -1,0 +1,42 @@
+html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
+   margin-right: 0.125rem
+}
+
+html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
+   margin-left: 0.125rem
+}
+
+.myAppDemoWT .myCustomText {
+   display: inline-block;
+   font-weight: bold;
+}
+
+.myButton button{
+	text-align: center;
+	padding: 0% 15% 0% 15%;
+}
+
+.myHeader{
+	font-size: 156.25%;
+}
+
+.myText{
+	font-size: 100%;
+}
+
+.myList{
+	padding: 1%;
+	font-size: 10%;
+}
+
+.myQuestion{
+	padding:2% 10% 2% 10%;
+}
+
+.myQuestionDetails{
+	float:right;
+}
+
+.myResults{
+	width: 50%;
+}

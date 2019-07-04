@@ -1,0 +1,75 @@
+<mvc:View
+	
+	xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	controllerName="demo.survey2.SurveyDemo2.controller.Home"> <!-- Specifies name of controller file -->
+	
+	<!-- Create Header --> 
+    <Panel
+        backgroundDesign="Transparent"
+        class="sapUiResponsiveMargin"
+		width="auto">
+        <content>
+			<Text class="myHeader"
+    			text="{i18n>createHeader}"/> 
+		</content>
+    </Panel>
+    
+    <!-- Create Text -->
+    <Panel
+        backgroundDesign="Transparent"
+        class="sapUiResponsiveMargin"
+		width="auto">
+        <content>
+			<Text class="myText"
+    			text="{i18n>createDesc}"/> 
+		</content>
+    </Panel>
+            			
+    <!-- Create Buttons -->
+            			
+    <Panel
+        backgroundDesign="Transparent"
+        class="sapUiResponsiveMargin myButton"
+		width="auto">
+        <content>
+			<Button
+    			text="{i18n>createSurveyButtonText}"
+    			icon="sap-icon://add"
+    			press=".onPress"
+    			width="50%"
+    			class="myCustomButton"/>
+							
+			<Button
+    			text="{i18n>createQuizButtonText}"
+    			icon="sap-icon://add"
+    			press=".onPress"
+    			width="50%"
+    			class="myCustomButton"/>
+    	</content>
+    </Panel>
+            			
+    <!-- 'My Header -->
+    <Panel
+        backgroundDesign="Transparent"
+        class="sapUiResponsiveMargin"
+		width="auto">
+        <content>
+			<Text class="myHeader"
+    			text="{i18n>myHeader}"/>
+		</content>
+    </Panel>
+            			
+    <!-- 'My' Text -->
+    <Panel
+        backgroundDesign="Transparent"
+        class="sapUiResponsiveMargin"
+		width="auto">
+        <content>
+			<Text class="myText" 
+    			text="{i18n>myDesc}"/>
+		</content>
+    </Panel>
+	
+</mvc:View>

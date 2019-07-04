@@ -1,0 +1,1 @@
+sap.ui.define(["./BaseController","sap/ui/core/routing/History"],function(e,o){"use strict";return e.extend("demo.survey2.SurveyDemo2.controller.NotFound",{onLinkPressed:function(){this.getRouter().navTo("overview")},onNavBack:function(){var e=o.getInstance().getPreviousHash();if(e!==undefined){history.go(-1)}else{this.getRouter().navTo("overview",{},true)}}})});

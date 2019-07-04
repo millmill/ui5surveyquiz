@@ -1,0 +1,55 @@
+<mvc:View
+	controllerName="demo.survey2.SurveyDemo2.controller.Worklist"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic">
+
+	<ScrollContainer  horizontal="true" vertical="true" width="98%" height="400px" visible="true">
+		<content>
+			<List
+				id="list"
+				width="auto"
+				items="{
+					path: '/SURVEYS',
+					sorter: {
+						path: 'STYPE',
+						group: true
+					}
+				}"
+				noDataText="{worklistView>/tableNoDataText}"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+				growing="true"
+				growingScrollToLoad="true"
+				updateFinished=".onUpdateFinished">
+
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title id="listHeader"
+							text="{worklistView>/worklistTableTitle}"
+							level="H3"/>
+						<ToolbarSpacer />
+						<SearchField id="searchField"
+							tooltip="{i18n>worklistSearchTooltip}"
+							search=".onSearch">
+							<layoutData>
+								<OverflowToolbarLayoutData
+									maxWidth="200px"
+									priority="NeverOverflow"/>
+							</layoutData>
+						</SearchField>
+					</OverflowToolbar>
+				</headerToolbar>
+
+				<items>
+        		<ObjectListItem
+            		title="{SNAME}"
+            		type="Navigation"
+					press="onPress"
+            		/>
+    			</items>
+    		
+			</List>
+		</content>
+	</ScrollContainer>
+	
+</mvc:View>

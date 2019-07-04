@@ -1,0 +1,182 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "demo.survey2.SurveyDemo2",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "resources": "resources.json",
+        "dataSources": {
+            "myservice.xsodata": {
+                "uri": "/SurveycrocdbDest/survey_pkg/myservice.xsodata/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/myservice.xsodata/metadata.xml"
+                }
+            }
+        },
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://task",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "demo.survey2.SurveyDemo2.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.60.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {},
+                "sap.viz": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "demo.survey2.SurveyDemo2.i18n.i18n"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "myservice.xsodata",
+                "preload": true
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "demo.survey2.SurveyDemo2.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": [
+                        "notFound"
+                    ]
+                },
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "overview",
+                    "target": [
+                        "overview"
+                    ]
+                },
+                {
+                    "pattern": "home",
+                    "name": "home",
+                    "target": [
+                        "home"
+                    ]
+                },
+                {
+                    "pattern": "worklist",
+                    "name": "worklist",
+                    "target": [
+                        "worklist"
+                    ]
+                },
+                {
+                    "pattern": "quiz/{objectId}",
+                    "name": "quiz",
+                    "target": [
+                        "quiz"
+                    ]
+                },
+                {
+                    "pattern": "SURVEYS/{objectId}",
+                    "name": "object",
+                    "target": [
+                        "object"
+                    ]
+                }
+            ],
+            "targets": {
+                "overview": {
+                    "viewName": "Overview",
+                    "viewId": "overview",
+                    "viewLevel": 1,
+                    "title": "{i18n>overviewViewTitle}"
+                },
+                "home": {
+                    "viewName": "Home",
+                    "viewId": "home",
+                    "viewLevel": 2,
+                    "title": "{i18n>homeViewTitle}"
+                },
+                "worklist": {
+                    "viewName": "Worklist",
+                    "viewId": "worklist",
+                    "viewLevel": 2,
+                    "title": "{i18n>worklistViewTitle}"
+                },
+                "quiz": {
+                    "viewName": "Quiz",
+                    "viewId": "quiz",
+                    "viewLevel": 2,
+                    "title": "{i18n>quizViewTitle}"
+                },
+                "object": {
+                    "viewName": "Object",
+                    "viewId": "object",
+                    "viewLevel": 2,
+                    "title": "{i18n>objectViewTitle}"
+                },
+                "objectNotFound": {
+                    "viewName": "ObjectNotFound",
+                    "viewId": "objectNotFound"
+                },
+                "notFound": {
+                    "viewName": "NotFound",
+                    "viewId": "notFound"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "flexEnabled": true
+    }
+}

@@ -1,0 +1,214 @@
+{
+    "resources": [
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "serviceBinding.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "controller/Worklist.controller.js"
+        },
+        {
+            "name": "controller/SurveyTitle.controller.js"
+        },
+        {
+            "name": "controller/SurveyQuestion.controller.js"
+        },
+        {
+            "name": "controller/SaveTDialog.js"
+        },
+        {
+            "name": "controller/SaveQDialog.js"
+        },
+        {
+            "name": "controller/Quiz.controller.js"
+        },
+        {
+            "name": "controller/Overview.controller.js"
+        },
+        {
+            "name": "controller/ObjectConor.controller.js"
+        },
+        {
+            "name": "controller/Object.controller.js"
+        },
+        {
+            "name": "controller/NotFound.controller.js"
+        },
+        {
+            "name": "controller/Home.controller.js"
+        },
+        {
+            "name": "placeholder.json"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "manifest-bundle.zip"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "controller/ErrorHandler.js"
+        },
+        {
+            "name": "serviceBinding-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "localService/mockserver-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Worklist-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/SurveyTitle-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/SurveyQuestion-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/SaveTDialog-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/SaveQDialog-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Quiz-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Overview-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ObjectConor-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Object-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/NotFound-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Home-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ErrorHandler-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/BaseController-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/App-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "view/Worklist.view.xml"
+        },
+        {
+            "name": "view/SurveyTitle.view.xml"
+        },
+        {
+            "name": "view/SurveyQuestion.view.xml"
+        },
+        {
+            "name": "view/SaveTDialog.fragment.xml"
+        },
+        {
+            "name": "view/SaveQDialog.fragment.xml"
+        },
+        {
+            "name": "view/Quiz.view.xml"
+        },
+        {
+            "name": "view/Overview.view.xml"
+        },
+        {
+            "name": "view/ObjectNotFound.view.xml"
+        },
+        {
+            "name": "view/ObjectConor.view.xml"
+        },
+        {
+            "name": "view/Object.view.xml"
+        },
+        {
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "view/Home.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "localService/myservice.xsodata/metadata.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "css/style.css"
+        }
+    ]
+}

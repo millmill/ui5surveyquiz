@@ -1,0 +1,1 @@
+function initModel(){var e="/SurveycrocdbDest/survey_pkg/myservice.xsodata/";var a=new sap.ui.model.odata.ODataModel(e,true);sap.ui.getCore().setModel(a)}
