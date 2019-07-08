@@ -115,10 +115,17 @@
 					]
 				},
 				{
-					"pattern": "quiz/{objectId}",
+					"pattern": "quiz",
 					"name": "quiz",
 					"target": [
 						"quiz"
+					]
+				},
+				{
+					"pattern": "userResults",
+					"name": "userResults",
+					"target": [
+						"userResults"
 					]
 				},
 				{
@@ -160,6 +167,12 @@
 					"viewId": "quiz",
 					"viewLevel": 2,
 					"title": "{i18n>quizViewTitle}"
+				},
+				"userResults": {
+					"viewName": "UserResults",
+					"viewId": "userResults",
+					"viewLevel": 2,
+					"title": "{i18n>userResultsViewTitle}"
 				},
 				"new": {
 					"viewName": "New",

@@ -21,11 +21,6 @@ sap.ui.define([
 		onPressHome: function (oEvent) {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("overview");
-		},
-		
-		onPressSubmit: function (oEvent) {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("userResults");
 		}
    	});
 });

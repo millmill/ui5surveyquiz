@@ -103,8 +103,9 @@
 		
 		onPressQuiz: function (oEvent) {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("quiz", {
-				objectId: "SURVEYID"});
+			oRouter.navTo("quiz"
+				//, {objectId: "SURVEYID"}
+				);
 		},
 		
 		/* =========================================================== */
