@@ -1,0 +1,26 @@
+<mvc:View
+	controllerName="demo.survey2.SurveyDemo2.controller.New"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic">
+	
+	<Page
+		title="{i18n>homePageTitle}"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+        <headerContent
+        	class="header">
+			<Button
+				icon="sap-icon://home"
+				press=".onPressHome"/>
+			<Button
+				icon="sap-icon://share-2"
+				text="Publish"
+				press=".onPressPublish"/>
+		</headerContent>
+		<content>
+			<mvc:XMLView viewName="demo.survey2.SurveyDemo2.view.SurveyTitle"/>
+			<mvc:XMLView viewName="demo.survey2.SurveyDemo2.view.SurveyQuestion"/>
+		</content>
+	</Page>
+</mvc:View>

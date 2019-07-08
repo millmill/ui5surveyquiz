@@ -6,7 +6,7 @@ sap.ui.define([
 ], function (Controller, MessageToast, Fragment, JSONModel) {
 	"use strict";
 
-	return Controller.extend("sap.ui.demo.walkthrough.controller.SurveyQuestion", {
+	return Controller.extend("demo.survey2.SurveyDemo2.controller.SurveyQuestion", {
 		getQuestion : function () {
 			// read msg from i18n model
 			var oBundle = this.getView().getModel("i18n").getResourceBundle();

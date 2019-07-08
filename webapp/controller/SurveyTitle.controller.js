@@ -6,26 +6,27 @@ sap.ui.define([
 ], function (Controller, MessageToast, Fragment, JSONModel) {
 	"use strict";
 	
-	return Controller.extend("sap.ui.demo.walkthrough.controller.SurveyTitle", {
+	return Controller.extend("demo.survey2.SurveyDemo2.controller.SurveyTitle", {
+		onInit	   : function () {
+			var oJsonModel = new JSONModel({data : {}});
+			this.getView().setModel(oJsonModel);
+		},
+		
 		getTitle   : function () {
 			// read msg from i18n model
-			var oBundle = this.getView().getModel("i18n").getResourceBundle();
+			//var oBundle = this.getView().getModel("i18n").getResourceBundle();
 			var sRecipient = this.getView().getModel().getProperty("/InputValue");
-			var sMsg = oBundle.getText("title", [sRecipient]);
+			//var sMsg = oBundle.getText("title", [sRecipient]);
 
 			// show message
-			MessageToast.show(sMsg);
+			MessageToast.show(sRecipient);
 		},
 		onOpenTDialog : function () {
 			this.getOwnerComponent().openSaveTDialog();
 		},
-		onInit : function () {
-			var oModel = new JSONModel({data : {}});
-			this.getView().setModel(oModel);
-		},
 		handleLiveChange : function (oEvent) {
-			var sValue = oEvent.getParameter("value");
-			this.byId("enterT").setText(sValue);
+			//var sValue = oEvent.getParameter("value");
+			//this.byId("enterT").setText(sValue);
 		}
 	});
 });

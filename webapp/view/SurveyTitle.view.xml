@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="sap.ui.demo.walkthrough.controller.SurveyTitle"
+	controllerName="demo.survey2.SurveyDemo2.controller.SurveyTitle"
 	xmlns:form="sap.ui.layout.form"
 	xmlns="sap.m"
 	xmlns:mvc="sap.iu.core.mvc">

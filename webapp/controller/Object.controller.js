@@ -14,7 +14,7 @@
 		// Initialization of application
 		onInit:function(){
 			
-			
+			/**
 			var oChart = this.byId("pieid");
 			oChart.setVizProperties({
 				legend:{
@@ -38,6 +38,7 @@
 			// Setting model to pie chart
 			oChart.setModel(oJsonModel);
 			//}
+			*/
 	//	});
 	//});
 
