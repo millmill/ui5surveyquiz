@@ -14,19 +14,19 @@ sap.ui.define([
 		
 		getTitle   : function () {
 			// read msg from i18n model
-			//var oBundle = this.getView().getModel("i18n").getResourceBundle();
+			var oBundle = this.getView().getModel("i18n").getResourceBundle();
 			var sRecipient = this.getView().getModel().getProperty("/InputValue");
-			//var sMsg = oBundle.getText("title", [sRecipient]);
+			var sMsg = oBundle.getText("title", [sRecipient]);
 
 			// show message
-			MessageToast.show(sRecipient);
+			MessageToast.show(sMsg);
 		},
 		onOpenTDialog : function () {
 			this.getOwnerComponent().openSaveTDialog();
 		},
 		handleLiveChange : function (oEvent) {
-			//var sValue = oEvent.getParameter("value");
-			//this.byId("enterT").setText(sValue);
+			var sValue = oEvent.getParameter("value");
+			this.byId("enterT").setText(sValue);
 		}
 	});
 });
