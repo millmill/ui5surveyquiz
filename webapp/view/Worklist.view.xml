@@ -4,17 +4,13 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:semantic="sap.f.semantic">
 
-	<ScrollContainer  horizontal="true" vertical="true" width="98%" height="400px" visible="true">
+	<ScrollContainer horizontal="true" vertical="true" width="98%" height="400px" visible="true">
 		<content>
 			<List
 				id="list"
 				width="auto"
 				items="{
-					path: '/SURVEYS',
-					sorter: {
-						path: 'STYPE',
-						group: true
-					}
+					path: '/quiz'
 				}"
 				noDataText="{worklistView>/tableNoDataText}"
 				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
@@ -42,7 +38,7 @@
 
 				<items>
         		<ObjectListItem
-            		title="{SNAME}"
+            		title="{quiz_name}"
             		type="Navigation"
 					press="onPress"
             		/>

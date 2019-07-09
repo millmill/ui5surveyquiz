@@ -21,11 +21,11 @@ sap.ui.define([
 		},
 		
 		onPressPublish: function (oEvent) {
-			var oModel = new sap.ui.model.odata.v2.ODataModel("/SurveycrocdbDest/survey_pkg/myservice.xsodata/");
+			var oModel = new sap.ui.model.odata.v2.ODataModel("/SurveycrocdbDest2/project/project.xsodata/");
 			var oData = {
-				SURVEYID:101, SNAME:"Test3", SOWNER:"Ian", STYPE:"Quiz", SDATE: new Date(),  SLENGTH:1, SQUESTION:"Question", SANSWERS:"Answers"
+				ID:"0", quiz_name:"Test", quiz_text:"Test", quiz_link:"www.test.com", quiz_difficulty: "Easy"
 			};
-			oModel.create("/SURVEYS", oData);
+			oModel.create("/quiz", oData);
 		}
    });
 });

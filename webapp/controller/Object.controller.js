@@ -104,7 +104,7 @@
 		onPressQuiz: function (oEvent) {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("quiz"
-				//, {objectId: "SURVEYID"}
+				, {objectId: "ID"}
 				);
 		},
 		
@@ -122,8 +122,8 @@
 		_onObjectMatched : function (oEvent) {
 			var sObjectId =  oEvent.getParameter("arguments").objectId;
 			this.getModel().metadataLoaded().then( function() {
-				var sObjectPath = this.getModel().createKey("SURVEYS", {
-					SURVEYID :  sObjectId
+				var sObjectPath = this.getModel().createKey("quiz", {
+					ID :  sObjectId
 				});
 				this._bindView("/" + sObjectPath);
 			}.bind(this));
@@ -173,8 +173,8 @@
 
 			var oResourceBundle = this.getResourceBundle(),
 				oObject = oView.getBindingContext().getObject(),
-				sObjectId = oObject.SURVEYID,
-				sObjectName = oObject.SNAME;
+				sObjectId = oObject.ID,
+				sObjectName = oObject.quiz_name;
 
 			oViewModel.setProperty("/busy", false);
 

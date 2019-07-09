@@ -43,6 +43,14 @@
         "name": "SurveycrocdbDest"
       },
       "description": "SurveycrocdbDest"
+    },
+    {
+      "path": "/SurveycrocdbDest2",
+      "target": {
+        "type": "destination",
+        "name": "SurveycrocdbDest2"
+      },
+      "description": "SurveycrocdbDest2"
     }
   ],
   "welcomeFile": "/webapp/index.html",

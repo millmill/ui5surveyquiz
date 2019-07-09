@@ -114,7 +114,7 @@ sap.ui.define([
 				if (sQuery && sQuery.length > 0) {
 					aTableSearchState = [new Filter({
 											caseSensitive: false,
-											path:"SNAME",
+											path:"quiz_name",
 											operator: FilterOperator.Contains,
 											value1: sQuery
 											})];
@@ -146,7 +146,7 @@ sap.ui.define([
 		 */
 		_showObject : function (oItem) {
 			this.getRouter().navTo("object", {
-				objectId: oItem.getBindingContext().getProperty("SURVEYID")
+				objectId: oItem.getBindingContext().getProperty("ID")
 			});
 		},
 
