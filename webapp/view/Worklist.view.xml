@@ -10,11 +10,7 @@
 				id="list"
 				width="auto"
 				items="{
-					path: '/SURVEYS',
-					sorter: {
-						path: 'STYPE',
-						group: true
-					}
+					path: '/quiz'
 				}"
 				noDataText="{worklistView>/tableNoDataText}"
 				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
@@ -42,7 +38,7 @@
 
 				<items>
         		<ObjectListItem
-            		title="{SNAME}"
+            		title="{quiz_name}"
             		type="Navigation"
 					press="onPress"
             		/>

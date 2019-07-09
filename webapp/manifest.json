@@ -17,6 +17,13 @@
 				"settings": {
 					"localUri": "localService/myservice.xsodata/metadata.xml"
 				}
+			},
+			"project.xsodata": {
+				"uri": "/SurveycrocdbDest2/project/project.xsodata/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/project.xsodata/metadata.xml"
+				}
 			}
 		},
 		"sourceTemplate": {
@@ -67,6 +74,17 @@
 					"bundleName": "demo.survey2.SurveyDemo2.i18n.i18n"
 				}
 			},
+			"surveys": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request",
+					"useBatch": true
+				},
+				"dataSource": "myservice.xsodata",
+				"preload": true
+			},
 			"": {
 				"type": "sap.ui.model.odata.v2.ODataModel",
 				"settings": {
@@ -74,7 +92,7 @@
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "myservice.xsodata",
+				"dataSource": "project.xsodata",
 				"preload": true
 			}
 		},
@@ -136,7 +154,7 @@
 					]
 				},
 				{
-					"pattern": "SURVEYS/{objectId}",
+					"pattern": "quiz/{objectId}",
 					"name": "object",
 					"target": [
 						"object"
@@ -197,9 +215,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"flexEnabled": true
 	}

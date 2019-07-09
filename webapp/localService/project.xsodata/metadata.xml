@@ -1,0 +1,19 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+			xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+			Namespace="project.project">
+			<EntityType Name="quiz_questionsType">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="2"/><Property Name="quiz_id" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="quiz_question" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="quiz_question_difficulty" Type="Edm.Int32" Nullable="false"/><Property Name="quiz_question_multianswer" Type="Edm.String" Nullable="false" MaxLength="20"/></EntityType>
+			<EntityType Name="quiz_question_answersType">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="2"/><Property Name="quiz_question_answer_correct" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="quiz_question_id" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="quiz_question_answer" Type="Edm.String" Nullable="false" MaxLength="20"/></EntityType>
+			<EntityType Name="quiz_user_answersType">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="2"/><Property Name="quiz_id" Type="Edm.Int32" Nullable="false"/><Property Name="quiz_question_id" Type="Edm.Int32" Nullable="false"/><Property Name="quiz_user_id" Type="Edm.Int32" Nullable="false"/><Property Name="quiz_question_answer_id" Type="Edm.Int32" Nullable="false"/><Property Name="quiz_question_time_start" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="quiz_question_time_end" Type="Edm.String" Nullable="false" MaxLength="20"/></EntityType>
+			<EntityType Name="userType">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="2"/><Property Name="full_name" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="email" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="gender" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="date_of_birth" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="created_at" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="country_code" Type="Edm.Int32" Nullable="false"/><Property Name="quiz_id" Type="Edm.Int32" Nullable="false"/><Property Name="time_start" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="time_end" Type="Edm.String" Nullable="false" MaxLength="20"/></EntityType>
+			<EntityType Name="quizType">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="2"/><Property Name="quiz_name" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="quiz_text" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="quiz_link" Type="Edm.String" Nullable="false" MaxLength="20"/><Property Name="quiz_difficulty" Type="Edm.String" Nullable="false" MaxLength="20"/></EntityType>
+			<EntityContainer Name="project" m:IsDefaultEntityContainer="true"><EntitySet Name="quiz_questions" EntityType="project.project.quiz_questionsType"/><EntitySet Name="quiz_question_answers" EntityType="project.project.quiz_question_answersType"/><EntitySet Name="quiz_user_answers" EntityType="project.project.quiz_user_answersType"/><EntitySet Name="user" EntityType="project.project.userType"/><EntitySet Name="quiz" EntityType="project.project.quizType"/></EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

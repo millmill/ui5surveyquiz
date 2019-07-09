@@ -8,7 +8,7 @@
 	xmlns:viz.data="sap.viz.ui5.data" 
 	xmlns:vtypes="sap.viz.ui5.types">
 	<Shell>
-		<Page title="My {STYPE}" id="page" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}" showNavButton="true"
+		<Page title="My Placeholder" id="page" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}" showNavButton="true"
 			navButtonPress=".onNavBack">
 			<headerContent class="header">
 				<Button icon="sap-icon://home" press=".onPressHome"/>
@@ -18,14 +18,14 @@
 				<!-- Header Tilte -->
 				
 				<Panel backgroundDesign="Transparent">
-					<Text class="myResults myHeader" text="{STYPE} Title"/>
-					<Text class="myResults myHeader" text="{STYPE} Link"/>
+					<Text class="myResults myHeader" text="Placeholder Title"/>
+					<Text class="myResults myHeader" text="Placeholder Link"/>
 				</Panel>
 				
 				<!-- Question + Link to Survey -->
 				
 				<Panel backgroundDesign="Transparent">
-					<Text class="myResults" text="{SNAME}"/>
+					<Text class="myResults" text="Placeholder"/>
 					<Input value="www.InternSurvey.com" class="myResults myHeader" editable="false" width="30%"/>
 					<Button
 						press=".onPressQuiz" 
@@ -35,14 +35,14 @@
 				<!-- -->
 				
 				<Panel backgroundDesign="Transparent">
-					<Text class="myResults myHeader" text="{STYPE} Question:"/>
+					<Text class="myResults myHeader" text="Placeholder Question:"/>
 					<Text class="myResults myHeader" text="Available Responses:"/>
 				</Panel>
 				
 				<!-- Available Responses ( Buttons )  -->
 				
 				<Panel backgroundDesign="Transparent">
-					<Input value="{SQUESTION}" editable="false" class="myResults" width="30%"/>
+					<Input value="Placeholder" editable="false" class="myResults" width="30%"/>
 					<RadioButtonGroup editable="false" class="myResults myInput">
 						<RadioButton text="Yes"/>
 						<RadioButton text="No"/>
@@ -52,14 +52,14 @@
 				<!-- Results header !-->
 				
 				<Panel backgroundDesign="Transparent">
-					<Text class="myResults myHeader" text="{STYPE} Results:"/>
+					<Text class="myResults myHeader" text="Placeholder Results:"/>
 				</Panel>
 				
 				<!-- Yes/No Result !-->
 				
 				<Panel>
-					<Text class="myResults" width="100%" text="Yes: {SLENGTH}"/>
-					<Text class="myResults" width="100%" text="No: {SLENGTH}"/>
+					<Text class="myResults" width="100%" text="Yes: Placeholder"/>
+					<Text class="myResults" width="100%" text="No: Placeholder"/>
 				</Panel>
 				<!--
 				<Panel>
