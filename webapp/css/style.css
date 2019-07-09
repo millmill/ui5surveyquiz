@@ -40,3 +40,6 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
 .myResults{
 	width: 50%;
 }
+.myInput{
+			padding-left:50%;
+}

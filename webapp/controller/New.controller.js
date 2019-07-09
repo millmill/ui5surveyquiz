@@ -23,7 +23,7 @@ sap.ui.define([
 		onPressPublish: function (oEvent) {
 			var oModel = new sap.ui.model.odata.v2.ODataModel("/SurveycrocdbDest/survey_pkg/myservice.xsodata/");
 			var oData = {
-				SURVEYID:101, SNAME:"Test3", SOWNER:"Ian", STYPE:"Quiz", SDATE: new Date(),  SLENGTH:1, SQUESTION:"Question", SANSWERS:"Answers"
+				SURVEYID:111, SNAME:"Test4", SOWNER:"Ian", STYPE:"Quiz", SDATE: new Date(),  SLENGTH:1, SQUESTION:"Question", SANSWERS:"Answers"
 			};
 			oModel.create("/SURVEYS", oData);
 		}
