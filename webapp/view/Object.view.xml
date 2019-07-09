@@ -29,7 +29,7 @@
 					<Input value="www.InternSurvey.com" class="myResults myHeader" editable="false" width="30%"/>
 					<Button
 						press=".onPressQuiz" 
-						icon="sap-icon://home"/>
+						icon="sap-icon://navigation-right-arrow"/>
 				</Panel>
 				
 				<!-- -->
