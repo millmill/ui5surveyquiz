@@ -30,19 +30,6 @@
 					width="50%"
 					/>
 			</form:SimpleForm>
-			<Button
-				id="saveTDialogButton"
-				icon="sap-icon://save"
-				text="{i18n>saveTDialogButtonText}"
-				press=".onOpenTDialog"
-				class="sapUiResponsiveMargin"/>
-			<Button
-				text="{i18n>showEnterTButtonText}"
-				press=".getTitle"
-				class="sapUiSmallMargin"/>
-			<FormattedText
-				htmlText="{/InputValue}"
-				class="sapUiResponsiveMargin sapThemeHighlight-asColor myCustomText"/>
 		</content>
 	</Panel>
 </mvc:View>
