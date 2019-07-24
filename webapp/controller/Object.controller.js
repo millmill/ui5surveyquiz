@@ -5,7 +5,11 @@
 	"../model/formatter"
 ], function (BaseController, JSONModel, History, formatter) {
 	"use strict";
+	
+	var oModel = new sap.ui.model.odata.v2.ODataModel("/project/intern-project/intern-project-odata.xsodata/");
 
+	var sObjectId;
+	
 	return BaseController.extend("demo.survey2.SurveyDemo2.controller.Object", {
 
 		formatter: formatter,
@@ -103,9 +107,18 @@
 		
 		onPressQuiz: function (oEvent) {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("quiz"
-				//, {objectId: "ID"}
+			//alert("{SQID}");
+			oRouter.navTo("quizpage"
+				//, {objectId: oItem.getBindingContext().getProperty("SQID")}
 				);
+		},
+		
+		onDelete : function (oEvent) {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oModel.remove(this.getModel().createKey("/SQ", {
+					SQID :  sObjectId
+				}));
+			oRouter.navTo("overview");
 		},
 		
 		/* =========================================================== */
@@ -120,10 +133,10 @@
 		 */
 
 		_onObjectMatched : function (oEvent) {
-			var sObjectId =  oEvent.getParameter("arguments").objectId;
+			sObjectId =  oEvent.getParameter("arguments").objectId;
 			this.getModel().metadataLoaded().then( function() {
-				var sObjectPath = this.getModel().createKey("quiz", {
-					ID :  sObjectId
+				var sObjectPath = this.getModel().createKey("SQ", {
+					SQID :  sObjectId
 				});
 				this._bindView("/" + sObjectPath);
 			}.bind(this));
@@ -173,8 +186,8 @@
 
 			var oResourceBundle = this.getResourceBundle(),
 				oObject = oView.getBindingContext().getObject(),
-				sObjectId = oObject.SURVEYID,
-				sObjectName = oObject.SNAME;
+				sObjectId = oObject.SQID,
+				sObjectName = oObject.SQ_TITLE;
 
 			oViewModel.setProperty("/busy", false);
 

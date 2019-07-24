@@ -4,7 +4,7 @@
 	xmlns:mvc="sap.ui.core.mvc">
 	<Shell>
 		<Page
-			title="{SNAME}"
+			title="{SQ_TITLE}"
 			id="page"
 			busy="{objectView>/busy}"
 			busyIndicatorDelay="{objectView>/delay}"
@@ -17,10 +17,51 @@
 					press=".onPressHome"/>
 			</headerContent>
 			<content>
-			<Button 
-				text="Submit"
-				press=".onPressSubmit"
-				/>
+				<Panel
+					backgroundDesign="Transparent"
+					class="sapUiResponsiveMargin">
+					<content>
+						<!--Specfiy quiz name -->
+						<Text
+							class="myResults myHeader"
+							text="Placeholder: Non Anonymous Placeholder"/>
+					</content>
+				</Panel>
+				
+				<Panel
+					backgroundDesign="Transparent"
+					class="sapUiResponsiveMargin">
+					<content>
+						<Text
+							class="myResults myHeader"
+							text="Question Placeholder:"/>
+						<Text
+							class="myResults myHeader"
+							text="Available Responses:"/>
+					</content> 
+				</Panel>
+				
+				<Panel
+					backgroundDesign="Transparent"
+					class="sapUiResponsiveMargin">
+					<content>
+						<Text class="myResults myText"
+							text="Placeholder"/>
+						<RadioButtonGroup editable="true" class="myResults myInput">
+							<RadioButton text="Placeholder"/>
+							<RadioButton text="Placeholder"/>
+							<RadioButton text="Placeholder"/>
+						</RadioButtonGroup>
+					</content> 
+				</Panel>
+				
+				<Panel
+					backgroundDesign="Transparent"
+					class="sapUiResponsiveMargin">
+					<Button 
+						text="Submit"
+						press=".onPressSubmit"/>
+				</Panel>
 			</content> 
 		</Page>
 	</Shell>

@@ -1,3 +1,4 @@
+
 sap.ui.define([
 	"./BaseController",
 	"sap/ui/model/json/JSONModel",
@@ -7,10 +8,20 @@ sap.ui.define([
 ], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
 	"use strict";
 
+	var oJsonModel = new sap.ui.model.json.JSONModel({user: "i505340"}); //Put user HERE
+			sap.ui.getCore().setModel(oJsonModel, "user");
+			
+	var oFilter = new Filter({
+			path: "SQ_OWNER",
+			operator: "EQ",
+			value1: sap.ui.getCore().getModel("user").getData().user
+			});
+
 	return BaseController.extend("demo.survey2.SurveyDemo2.controller.Worklist", {
 
 		formatter: formatter,
 
+		
 		/* =========================================================== */
 		/* lifecycle methods                                           */
 		/* =========================================================== */
@@ -20,6 +31,8 @@ sap.ui.define([
 		 * @public
 		 */
 		onInit : function () {
+			
+			
 			var oViewModel,
 				iOriginalBusyDelay,
 				oTable = this.byId("list");
@@ -48,6 +61,7 @@ sap.ui.define([
 			oTable.attachEventOnce("updateFinished", function(){
 				// Restore original busy indicator delay for worklist's table
 				oViewModel.setProperty("/tableBusyDelay", iOriginalBusyDelay);
+	
 			});
 		},
 
@@ -77,6 +91,8 @@ sap.ui.define([
 				sTitle = this.getResourceBundle().getText("worklistTableTitle");
 			}
 			this.getModel("worklistView").setProperty("/worklistTableTitle", sTitle);
+			
+			this._applySearch(oFilter);
 		},
 
 		/**
@@ -95,10 +111,14 @@ sap.ui.define([
 		 * @public
 		 */
 		onNavBack : function() {
-			// eslint-disable-next-line sap-no-history-manipulation
-			history.go(-1);
-		},
+			var sPreviousHash = History.getInstance().getPreviousHash();
 
+			if (sPreviousHash !== undefined) {
+				history.go(-1);
+			} else {
+				this.getRouter().navTo("overview", {}, true);
+			}
+		},
 
 		onSearch : function (oEvent) {
 			if (oEvent.getParameters().refreshButtonPressed) {
@@ -114,7 +134,7 @@ sap.ui.define([
 				if (sQuery && sQuery.length > 0) {
 					aTableSearchState = [new Filter({
 											caseSensitive: false,
-											path:"SNAME",
+											path:"SQ_TITLE",
 											operator: FilterOperator.Contains,
 											value1: sQuery
 											})];
@@ -133,7 +153,7 @@ sap.ui.define([
 			var oTable = this.byId("list");
 			oTable.getBinding("items").refresh();
 		},
-
+		
 		/* =========================================================== */
 		/* internal methods                                            */
 		/* =========================================================== */
@@ -145,9 +165,11 @@ sap.ui.define([
 		 * @private
 		 */
 		_showObject : function (oItem) {
-			this.getRouter().navTo("object", {
-				objectId: oItem.getBindingContext().getProperty("ID")
-			});
+			//if (oItem.getBindingContext().getProperty("quiz_owner") === sap.ui.getCore().getModel("user").getData().user){
+				this.getRouter().navTo("object", {
+					objectId: oItem.getBindingContext().getProperty("SQID")
+				});
+			//}
 		},
 
 		/**

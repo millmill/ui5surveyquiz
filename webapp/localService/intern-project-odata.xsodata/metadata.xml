@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema Namespace="intern-project.intern-project-odata" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+			xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="AnswersType">
+				<Key><PropertyRef Name="ANSWERID"/></Key><Property Name="ANSWERID" Type="Edm.Int32" Nullable="false"/><Property Name="QUESTIONID" Type="Edm.Int32" Nullable="false"/><Property Name="ANSWER" Type="Edm.String" Nullable="false" MaxLength="255"/><Property Name="ANSWER_CORRECT" Type="Edm.String" Nullable="false" MaxLength="255"/></EntityType>
+			<EntityType Name="QuestionsType">
+				<Key><PropertyRef Name="QUESTIONID"/></Key><Property Name="QUESTIONID" Type="Edm.Int32" Nullable="false"/><Property Name="SQID" Type="Edm.Int32" Nullable="false"/><Property Name="QUESTION_TITLE" Type="Edm.String" Nullable="false" MaxLength="255"/><Property Name="QUESTION" Type="Edm.String" Nullable="false" MaxLength="255"/><Property Name="ANSWER_TYPE" Type="Edm.String" Nullable="false" MaxLength="255"/><Property Name="NUM_OF_ANSWERS" Type="Edm.Int32" Nullable="false"/></EntityType>
+			<EntityType Name="SQType">
+				<Key><PropertyRef Name="SQID"/></Key><Property Name="SQID" Type="Edm.Int32" Nullable="false"/><Property Name="SQ_TITLE" Type="Edm.String" Nullable="false" MaxLength="255"/><Property Name="SQ_LINK" Type="Edm.String" Nullable="false" MaxLength="255"/><Property Name="SQ_TYPE" Type="Edm.String" Nullable="false" MaxLength="255"/><Property Name="DATE" Type="Edm.DateTime" Nullable="false"/><Property Name="SQ_OWNER" Type="Edm.Int32" Nullable="false"/><Property Name="NUM_OF_QUESTIONS" Type="Edm.Int32" Nullable="false"/></EntityType>
+			<EntityType Name="UsersType">
+				<Key><PropertyRef Name="USERID"/></Key><Property Name="USERID" Type="Edm.Int32" Nullable="false"/><Property Name="USERNAME" Type="Edm.String" Nullable="false" MaxLength="255"/><Property Name="NUM_OF_SQ" Type="Edm.Int32" Nullable="false"/></EntityType>
+			<EntityType Name="UserAnswersType">
+				<Key><PropertyRef Name="UAID"/></Key><Property Name="UAID" Type="Edm.Int32" Nullable="false"/><Property Name="USERID" Type="Edm.Int32" Nullable="false"/><Property Name="ANSWERID" Type="Edm.Int32" Nullable="false"/></EntityType>
+			<EntityType Name="UserSQType">
+				<Key><PropertyRef Name="USQID"/></Key><Property Name="USQID" Type="Edm.Int32" Nullable="false"/><Property Name="USERID" Type="Edm.Int32" Nullable="false"/><Property Name="SQID" Type="Edm.Int32" Nullable="false"/></EntityType>
+			<EntityContainer Name="intern-project-odata" m:IsDefaultEntityContainer="true"><EntitySet Name="Answers" EntityType="intern-project.intern-project-odata.AnswersType"/><EntitySet Name="Questions" EntityType="intern-project.intern-project-odata.QuestionsType"/><EntitySet Name="SQ" EntityType="intern-project.intern-project-odata.SQType"/><EntitySet Name="Users" EntityType="intern-project.intern-project-odata.UsersType"/><EntitySet Name="UserAnswers" EntityType="intern-project.intern-project-odata.UserAnswersType"/><EntitySet Name="UserSQ" EntityType="intern-project.intern-project-odata.UserSQType"/></EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,12 +1,12 @@
 sap.ui.define([
-   "sap/ui/core/mvc/Controller",
+   "./BaseController",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History",
 	"../model/formatter"
-], function (Controller, JSONModel, History, formatter) {
+], function (BaseController, JSONModel, History, formatter) {
    "use strict";
 
-   return Controller.extend("demo.survey2.SurveyDemo2.controller.UserResults", {
+   return BaseController.extend("demo.survey2.SurveyDemo2.controller.UserResults", {
 		onNavBack : function() {
 			var sPreviousHash = History.getInstance().getPreviousHash();
 

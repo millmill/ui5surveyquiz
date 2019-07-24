@@ -7,25 +7,46 @@
 				<Button icon="sap-icon://home" press=".onPressHome"/>
 			</headerContent>
 			<content>
-				<Panel backgroundDesign="Transparent">
-					<Text class="myResults myHeader" text="Quiz: Non Anonymous Quiz"></Text>
-					<!--Specfiy quiz name -->
-					<Text class="myResults myHeader" text="Quiz Score: 100%"></Text>
-					<!--Specfiy quiz score -->
+				<Panel
+					backgroundDesign="Transparent"
+					class="sapUiResponsiveMargin">
+					<content>
+						<!--Specfiy quiz name -->
+						<Text
+							class="myResults myHeader"
+							text="Placeholder: Non Anonymous Placeholder"/>
+						<!--Specfiy quiz score -->
+						<Text
+							class="myResults myHeader"
+							text="Placeholder Score: Placeholder%"/>
+					</content>
 				</Panel>
-				<Panel  backgroundDesign="Transparent">
-					<Text class="myResults myHeader" text="Question 1:"></Text>					<!--Specfiy quiz name -->
-					
-					<Text class="myResults myHeader" text="User Response:"></Text>	<!--Specfiy quiz name -->
-						<Text class="myResults " text="Question 1"></Text>
-					<!--Specfiy quiz name -->
-					<RadioButtonGroup editable="false" class="myResults myInput">
-						<RadioButton text="A"/>
-						<RadioButton text="B"/>
-						<RadioButton text="C"/>
-						
-						
-					</RadioButtonGroup>
+				
+				<Panel
+					backgroundDesign="Transparent"
+					class="sapUiResponsiveMargin">
+					<content>
+						<Text
+							class="myResults myHeader"
+							text="Question Placeholder:"/>
+						<Text
+							class="myResults myHeader"
+							text="User Response:"/>
+					</content> 
+				</Panel>
+				
+				<Panel
+					backgroundDesign="Transparent"
+					class="sapUiResponsiveMargin">
+					<content>
+						<Text class="myResults myText"
+							text="Placeholder"/>
+						<RadioButtonGroup editable="false" class="myResults myInput">
+							<RadioButton text="Placeholder"/>
+							<RadioButton text="Placeholder"/>
+							<RadioButton text="Placeholder"/>
+						</RadioButtonGroup>
+					</content> 
 				</Panel>
 			
 			</content>

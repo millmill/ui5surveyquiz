@@ -1,42 +1,44 @@
-<mvc:View
-	controllerName="demo.survey2.SurveyDemo2.controller.SurveyQuestion"
-	xmlns:form="sap.ui.layout.form"
-	xmlns="sap.m"
-	xmlns:mvc="sap.iu.core.mvc">
-	<Panel
-		headerText="{i18n>createSQPanelTitle}"
-		class="sapUiResponsiveMargin"
-		width="auto" >
+<mvc:View xmlns:form="sap.ui.layout.form" xmlns="sap.m" xmlns:mvc="sap.iu.core.mvc" controllerName="demo.survey2.SurveyDemo2.controller.SurveyQuestion">
+	<Panel backgroundDesign="Transparent" class="sapUiResponsiveMargin" width="auto">
+        <content>
+			<Text class="myHeader" text="{i18n>createSQPanelTitle}"/> 
+		</content>
+    </Panel>
+	
+	<Panel backgroundDesign="Transparent" class="sapUiResponsiveMargin" width="auto">
 		<content>
-			<form:SimpleForm editable="true">
-				<TextArea
-					id="TypeQ"
-					placeholder="{i18n>placeholderQuestion}"
-					value="{/InputValue}"
-					valueLiveUpdate="true"
-					liveChange="handleLiveChange"
-					width="60%"/>
-				<VBox class="sapUiResponsiveMargin">
-					<RadioButton
-						text="Yes"/>
-					<RadioButton
-						text="No"/>
-				</VBox>
-			</form:SimpleForm>
-			<Button
-				id="saveQDialogButton"
-				icon="sap-icon://save"
-				text="{i18n>saveQDialogButtonText}"
-				press=".onOpenQDialog"
-				class="sapUiResponsiveMargin"/>
-			<Button
-				text="{i18n>showEnterQButtonText}"
-				press=".getQuestion"
-				class="sapUiSmallMargin"/>
-			<FormattedText
-				htmlText="{/InputValue}"
-				class="sapUiResponsiveMargin sapThemeHighlight-asColor myCustomText"/>
-			
+			<TextArea id="TypeQ" placeholder="{i18n>placeholderQuestion}" value="{/InputValue}" valueLiveUpdate="true" liveChange="handleLiveChange" width="50%"/>
+			<VBox>
+				<form:SimpleForm editable="true">
+					<form:content>
+						<RadioButtonGroup id="answers">
+							<RadioButton text="{/answer0}"/>
+							<RadioButton text="{/answer1}"/>
+							<RadioButton text="{/answer2}"/>
+							<RadioButton text="{/answer3}"/>
+							<RadioButton text="{/answer4}"/>
+						</RadioButtonGroup>
+						<List id="answers_list" width="50%">
+							<InputListItem>
+								<Input ariaLabelledBy="__item0-label" value="{/answer0}" width="100%" id="input0" valueLiveUpdate="true"/>
+							</InputListItem>
+							<InputListItem>
+								<Input ariaLabelledBy="__item1-label" value="{/answer1}" width="100%" id="input1" valueLiveUpdate="true"/>
+							</InputListItem>
+							<InputListItem>
+								<Input ariaLabelledBy="__item1-label" value="{/answer2}" width="100%" id="input2" valueLiveUpdate="true"/>
+							</InputListItem>
+							<InputListItem>
+								<Input ariaLabelledBy="__item1-label" value="{/answer3}" width="100%" id="input3" valueLiveUpdate="true"/>
+							</InputListItem>
+							<InputListItem>
+								<Input ariaLabelledBy="__item1-label" value="{/answer4}" width="100%" id="input4" valueLiveUpdate="true"/>
+							</InputListItem>
+			    		</List>
+					</form:content>
+				</form:SimpleForm><Button icon="sap-icon://add" press="onAdd"/>
+			</VBox>
 		</content>
 	</Panel>
+	
 </mvc:View>

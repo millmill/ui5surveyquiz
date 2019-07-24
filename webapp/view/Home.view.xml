@@ -37,14 +37,14 @@
 			<Button
     			text="{i18n>createSurveyButtonText}"
     			icon="sap-icon://add"
-    			press=".onPress"
+    			press=".onPressS"
     			width="50%"
     			class="myCustomButton"/>
 							
 			<Button
     			text="{i18n>createQuizButtonText}"
     			icon="sap-icon://add"
-    			press=".onPress"
+    			press=".onPressQ"
     			width="50%"
     			class="myCustomButton"/>
     	</content>

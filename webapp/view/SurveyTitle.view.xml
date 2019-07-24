@@ -4,13 +4,23 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.iu.core.mvc">
 	<Panel
+        backgroundDesign="Transparent"
+        class="sapUiResponsiveMargin"
+		width="auto">
+        <content>
+			<Text class="myHeader"
+    			text="{i18n>createSTitlePanelTitle}"/> 
+		</content>
+    </Panel>
+	
+	<Panel
+		backgroundDesign="Transparent"
 		class="sapUiResponsiveMargin"
 		width="auto" >
 		<content>
 			<form:SimpleForm
 				class= "myForm"
-				editable="true"
-				title="{i18n>createSTitlePanelTitle}">
+				editable="true">
 				<TextArea
 					id="TypeT"
 					placeholder="{i18n>placeholderTitle}"
