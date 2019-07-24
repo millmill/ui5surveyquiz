@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ActionSheet
+		title="Select Answer Type"
+		showCancelButton="true"
+		placement="Bottom">
+			<Button text="Radio" icon="sap-icon://circle-task" press="actionSelected" />
+			<Button text="Checkbox" icon="sap-icon://multiselect-all" press="makeCheckbox" />
+			<Button text="Slider" icon="sap-icon://resize-horizontal" press="actionSelected" />
+			<Button text="Text Input" icon="sap-icon://write-new" press="actionSelected" />
+	</ActionSheet>
+</core:FragmentDefinition>
