@@ -8,6 +8,8 @@ sap.ui.define([
 	
 	var oModel;
 	var oData;
+	var answers = 2;
+
 	
 	return Controller.extend("demo.survey2.SurveyDemo2.controller.SurveyQuestion", {
 		getQuestion : function () {
@@ -36,23 +38,22 @@ sap.ui.define([
 			this.getView().setModel(oModel);
 		},
 		handleLiveChange : function () {
-			alert("Live Change");
-			//var sValue = oEvent.getParameter("value");
-			//this.byId("enterQ").setText(sValue);
+		},
+		
+		onRemove : function () {
+			if (answers > 2){
+				answers -= 1;
+				this.getView().byId("radio" + answers).setVisible(false);
+				this.getView().byId("inputlist" + answers).setVisible(false);
+			}
 		},
 		
 		onAdd : function () {
-			var oButton = new sap.m.RadioButton();
-			oButton.setText(oModel.getData().answer2);
-			this.byId("answers").addButton(oButton);
-			var oInput = new sap.m.Input();
-			oInput.setValueLiveUpdate(true);
-			var x = this;
-			oInput.attachLiveChange(x.handleLiveChange());
-			oInput.setValue(oModel.getData().answer2);
-			var oInputList = new sap.m.InputListItem();
-			oInputList.addContent(oInput);
-			this.byId("answers_list").addItem(oInputList);
+			if (answers < 5){
+				this.getView().byId("radio" + answers).setVisible(true);
+				this.getView().byId("inputlist" + answers).setVisible(true);
+				answers += 1;
+			}
 		}
 	});
 });
