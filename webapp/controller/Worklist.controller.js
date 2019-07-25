@@ -7,7 +7,7 @@ sap.ui.define([
 	"sap/ui/model/FilterOperator"
 ], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
 	"use strict";
-
+	
 	var oJsonModel = new sap.ui.model.json.JSONModel({user: "i505340"}); //Put user HERE
 			sap.ui.getCore().setModel(oJsonModel, "user");
 			
@@ -31,7 +31,6 @@ sap.ui.define([
 		 * @public
 		 */
 		onInit : function () {
-			
 			
 			var oViewModel,
 				iOriginalBusyDelay,
