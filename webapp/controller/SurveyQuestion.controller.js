@@ -36,8 +36,13 @@ sap.ui.define([
 			};
 			oModel = new JSONModel(oData);
 			this.getView().setModel(oModel);
+			var oJsonModel = new sap.ui.model.json.JSONModel({answersCount : answers});
+			sap.ui.getCore().setModel(oJsonModel, "answersCount");
 		},
-		handleLiveChange : function () {
+		handleLiveChange : function (oEvent) {
+			var sValue = oEvent.getParameter("value");
+			var oJsonModel = new sap.ui.model.json.JSONModel({question : sValue});
+			sap.ui.getCore().setModel(oJsonModel, "question0");
 		},
 		
 		onRemove : function () {
@@ -45,6 +50,8 @@ sap.ui.define([
 				answers -= 1;
 				this.getView().byId("radio" + answers).setVisible(false);
 				this.getView().byId("inputlist" + answers).setVisible(false);
+				var oJsonModel = new sap.ui.model.json.JSONModel({answersCount : answers});
+				sap.ui.getCore().setModel(oJsonModel, "answersCount");
 			}
 		},
 		
@@ -53,6 +60,8 @@ sap.ui.define([
 				this.getView().byId("radio" + answers).setVisible(true);
 				this.getView().byId("inputlist" + answers).setVisible(true);
 				answers += 1;
+				var oJsonModel = new sap.ui.model.json.JSONModel({answersCount : answers});
+				sap.ui.getCore().setModel(oJsonModel, "answersCount");
 			}
 		}
 	});

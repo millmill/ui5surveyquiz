@@ -114,10 +114,29 @@
 		},
 		
 		onDelete : function (oEvent) {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			
 			oModel.remove(this.getModel().createKey("/SQ", {
 					SQID :  sObjectId
 				}));
+			
+			var i = 0;
+			while(i < 1){ //need to replace with no of questions
+				oModel.remove(this.getModel().createKey("/Questions", {
+						QUESTIONID :  sObjectId + i
+					}));
+				var j = 0;
+				while (j < sap.ui.getCore().getModel("answersCount").getData().answersCount) {
+					oModel.remove(this.getModel().createKey("/Answers", {
+						ANSWERID :  sObjectId + i + j
+					}));
+					j += 1;
+				}
+			i += 1;
+			}
+			
+			
+			
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("overview");
 		},
 		
