@@ -173,6 +173,34 @@
 					"target": [
 						"object"
 					]
+				},
+				{
+					"pattern": "questionCheckbox",
+					"name": "questionCheckbox",
+					"target": [
+						"questionCheckbox"
+					]
+				},
+				{
+					"pattern": "questionSlider",
+					"name": "questionSlider",
+					"target": [
+						"questionSlider"
+					]
+				},
+				{
+					"pattern": "questionTextbox",
+					"name": "questionTextbox",
+					"target": [
+						"questionTextbox"
+					]
+				},
+				{
+					"pattern": "questionRadio",
+					"name": "questionRadio",
+					"target": [
+						"questionRadio"
+					]
 				}
 			],
 			"targets": {
@@ -225,6 +253,22 @@
 				"notFound": {
 					"viewName": "NotFound",
 					"viewId": "notFound"
+				},
+				"questionCheckbox": {
+					"viewName": "QuestionCheckbox",
+					"viewId": "questionCheckbox"
+				},
+				"questionSlider": {
+					"viewName": "QuestionSlider",
+					"viewId": "questionSlider"
+				},
+				"questionTextbox": {
+					"viewName": "QuestionTextbox",
+					"viewId": "questionTextbox"
+				},
+				"questionRadio": {
+					"viewName": "QuestionRadio",
+					"viewId": "questionRadio"
 				}
 			}
 		},

@@ -21,15 +21,25 @@ sap.ui.define([
 			this._actionSheet.openBy(oButton);
 		},
 
-		actionSelected : function(oEvent){
-			MessageToast.show("Adding the answer option '" + oEvent.getSource().getText() + "'");
-			
+		
+		questionCheckbox : function(oEvent){
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("questionCheckbox");
 		},
 		
-		makeCheckbox : function(oEvent){
-		//	var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-		//	oRouter.navTo("questionCheckbox");
-		MessageToast.show("I want to open the view for setting the " + oEvent.getSource().getText() + " option");
+		questionRadio : function(oEvent){
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("questionRadio");
+		},
+		
+		questionTextbox : function(oEvent){
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("questionTextbox");
+		},
+		
+		questionSlider : function(oEvent){
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("questionSlider");
 		}
 	});
 
