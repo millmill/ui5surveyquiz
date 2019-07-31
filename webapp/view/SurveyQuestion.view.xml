@@ -1,4 +1,9 @@
-<mvc:View xmlns:form="sap.ui.layout.form" xmlns="sap.m" xmlns:mvc="sap.iu.core.mvc" controllerName="demo.survey2.SurveyDemo2.controller.QuestionRadio">
+<mvc:View
+	xmlns:form="sap.ui.layout.form"
+	xmlns="sap.m"
+	xmlns:mvc="sap.iu.core.mvc"
+	controllerName="demo.survey2.SurveyDemo2.controller.QuestionRadio">
+	
 	<Panel backgroundDesign="Transparent" class="sapUiResponsiveMargin" width="auto">
         <content>
 			<Text class="myHeader" text="{i18n>createSQPanelTitle}"/> 
@@ -7,7 +12,13 @@
 	
 	<Panel backgroundDesign="Transparent" class="sapUiResponsiveMargin" width="auto">
 		<content>
-			<TextArea id="TypeQ" placeholder="{i18n>placeholderQuestion}" value="{/InputValue}" valueLiveUpdate="true" liveChange="handleLiveChange" width="50%"/>
+			<TextArea id="TypeQ"
+				placeholder="{i18n>placeholderQuestion}"
+				value="{/InputValue}"
+				valueLiveUpdate="true"
+				liveChange="handleLiveChange"
+				width="50%"/>
+
 			<VBox>
 				<form:SimpleForm editable="true">
 					<form:content>
@@ -36,7 +47,10 @@
 							</InputListItem>
 			    		</List>
 					</form:content>
-				</form:SimpleForm><Button icon="sap-icon://add" press="onAdd"/><Button icon="sap-icon://less" press="onRemove"/>
+				</form:SimpleForm>
+				
+				<Button icon="sap-icon://add" press="onAdd"/>
+				<Button icon="sap-icon://less" press="onRemove"/>
 			</VBox>
 		</content>
 	</Panel>

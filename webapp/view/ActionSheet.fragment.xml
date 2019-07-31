@@ -1,6 +1,7 @@
 <core:FragmentDefinition
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core">
+
 	<ActionSheet
 		title="Select Answer Type"
 		showCancelButton="true"
@@ -10,4 +11,5 @@
 			<Button text="Slider" icon="sap-icon://resize-horizontal" press="questionSlider" />
 			<Button text="Text Input" icon="sap-icon://write-new" press="questionTextbox" />
 	</ActionSheet>
+
 </core:FragmentDefinition>
