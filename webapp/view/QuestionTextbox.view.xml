@@ -4,31 +4,46 @@
 	xmlns:mvc="sap.iu.core.mvc"
 	controllerName="demo.survey2.SurveyDemo2.controller.QuestionSlider">
 	
-	<Panel backgroundDesign="Transparent" class="sapUiResponsiveMargin" width="auto">
-        <content>
-			<Text class="myHeader" text="{i18n>createSQPanelTitle}"/> 
-		</content>
-    </Panel>
+	<Page 
+		title="{i18n>addQuestion}"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+        <headerContent
+        	class="header">
+			<Button
+				icon="sap-icon://home"
+				press=".onPressHome"/>
+			<Button
+				icon="sap-icon://share-2"
+				text="Publish"
+				press=".onPressPublish"/>
+		</headerContent>
 	
-	<Panel backgroundDesign="Transparent" class="sapUiResponsiveMargin" width="auto">
-		<content>
-			<TextArea id="TypeQ"
-			placeholder="{i18n>placeholderQuestion}"
-			value="{/InputValue}"
-			valueLiveUpdate="true"
-			liveChange="handleLiveChange"
-			width="50%"/>
-				<form:SimpleForm editable="true">
-					<form:content>
-						<TextArea id="TextAnswer"
-						placeholder="{i18n>placeholderTextAnswer}"
-						value="{/InputValue}"
-						valueLiveUpdate="true"
-						liveChange="handleLiveChange"
-						width="50%"/>
-					</form:content>
-				</form:SimpleForm>
-		</content>
-	</Panel>
-
+		<Panel backgroundDesign="Transparent" class="sapUiResponsiveMargin" width="auto">
+	        <content>
+				<Text class="myHeader" text="{i18n>createSQPanelTitle}"/> 
+			</content>
+	    </Panel>
+		
+		<Panel backgroundDesign="Transparent" class="sapUiResponsiveMargin" width="auto">
+			<content>
+				<TextArea id="TypeQ"
+				placeholder="{i18n>placeholderQuestion}"
+				value="{/InputValue}"
+				valueLiveUpdate="true"
+				liveChange="handleLiveChange"
+				width="50%"/>
+					<form:SimpleForm editable="true">
+						<form:content>
+							<TextArea id="TextAnswer"
+							placeholder="{i18n>placeholderTextAnswer}"
+							value="{/InputValue}"
+							valueLiveUpdate="true"
+							liveChange="handleLiveChange"
+							width="50%"/>
+						</form:content>
+					</form:SimpleForm>
+			</content>
+		</Panel>
+	</Page>
 </mvc:View>

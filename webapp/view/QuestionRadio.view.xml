@@ -55,7 +55,9 @@
 								</InputListItem>
 				    		</List>
 						</form:content>
-					</form:SimpleForm><Button icon="sap-icon://add" press="onAdd"/><Button icon="sap-icon://less" press="onRemove"/>
+					</form:SimpleForm>
+						<Button icon="sap-icon://add" press="onAdd"/>
+						<Button icon="sap-icon://less" press="onRemove"/>
 				</VBox>
 			</content>
 		</Panel>

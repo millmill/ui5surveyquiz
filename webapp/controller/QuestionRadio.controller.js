@@ -1,10 +1,10 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
+	"./BaseController",
 	"sap/m/MessageToast",
 	"sap/ui/core/Fragment",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History"
-], function (Controller, MessageToast, Fragment, JSONModel) {
+], function (Controller, MessageToast, Fragment, JSONModel, History) {
 	"use strict";
 	
 	var oModel;
@@ -19,7 +19,7 @@ sap.ui.define([
 			if (sPreviousHash !== undefined) {
 				history.go(-1);
 			} else {
-				this.getRouter().navTo("overview", {}, true);
+				this.getRouter().navTo("new", {}, true);
 			}
 		},
 		
@@ -98,7 +98,7 @@ sap.ui.define([
 				oModel.create("/Answers", AnswersoData);
 				i += 1; 
 		  	}
-		  },
+		},
 		  
 		getQuestion : function () {
 			// read msg from i18n model
@@ -113,6 +113,7 @@ sap.ui.define([
 			this.getOwnerComponent().openSaveQDialog();
 		},
 		onInit : function () {
+			this.getRouter().getRoute("new").attachPatternMatched(this._onObjectMatched, this);
 			oData = {
 				//answers : {
 					answer0 : "True",
@@ -152,6 +153,10 @@ sap.ui.define([
 				var oJsonModel = new sap.ui.model.json.JSONModel({answersCount : answers});
 				sap.ui.getCore().setModel(oJsonModel, "answersCount");
 			}
+		},
+		
+		_onObjectMatched : function (oEvent) {
+			sObjectId =  oEvent.getParameter("arguments").type;
 		}
 	});
 });

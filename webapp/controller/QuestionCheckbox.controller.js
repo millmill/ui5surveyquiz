@@ -1,9 +1,10 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
+	"./BaseController",
 	"sap/m/MessageToast",
 	"sap/ui/core/Fragment",
-	"sap/ui/model/json/JSONModel"
-], function (Controller, MessageToast, Fragment, JSONModel) {
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/core/routing/History"
+], function (Controller, MessageToast, Fragment, JSONModel, History) {
 	"use strict";
 	
 	var oModel;
@@ -18,7 +19,7 @@ sap.ui.define([
 			if (sPreviousHash !== undefined) {
 				history.go(-1);
 			} else {
-				this.getRouter().navTo("overview", {}, true);
+				this.getRouter().navTo("new", {}, true);
 			}
 		},
 		
@@ -37,7 +38,7 @@ sap.ui.define([
 		*/
 		
 		
-		  onPressPublish: function (oEvent) {
+		onPressPublish: function (oEvent) {
 			var oModel = new sap.ui.model.odata.v2.ODataModel("/project/intern-project/intern-project-odata.xsodata/");
 			var oTitle = sap.ui.getCore().getModel("title").getData().title;
 			var oOwner = sap.ui.getCore().getModel("user").getData().user;
@@ -97,7 +98,8 @@ sap.ui.define([
 				oModel.create("/Answers", AnswersoData);
 				i += 1; 
 		  	}
-		  },
+		},
+		
 		getQuestion : function () {
 			// read msg from i18n model
 			var oBundle = this.getView().getModel("i18n").getResourceBundle();
@@ -111,6 +113,7 @@ sap.ui.define([
 			this.getOwnerComponent().openSaveQDialog();
 		},
 		onInit : function () {
+			this.getRouter().getRoute("new").attachPatternMatched(this._onObjectMatched, this);
 			oData = {
 				//answers : {
 					answer0 : "True",
@@ -125,6 +128,7 @@ sap.ui.define([
 			var oJsonModel = new sap.ui.model.json.JSONModel({answersCount : answers});
 			sap.ui.getCore().setModel(oJsonModel, "answersCount");
 		},
+		
 		handleLiveChange : function (oEvent) {
 			var sValue = oEvent.getParameter("value");
 			var oJsonModel = new sap.ui.model.json.JSONModel({question : sValue});
@@ -149,6 +153,10 @@ sap.ui.define([
 				var oJsonModel = new sap.ui.model.json.JSONModel({answersCount : answers});
 				sap.ui.getCore().setModel(oJsonModel, "answersCount");
 			}
+		},
+		
+		_onObjectMatched : function (oEvent) {
+			sObjectId =  oEvent.getParameter("arguments").type;
 		}
 	});
 });
